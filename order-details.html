@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Your Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Your Store</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="order-details-header">
+                <a href="orders.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Orders</a>
+                <h1>Order Details</h1>
+            </div>
+
+            <div class="order-details-content">
+                <div class="order-info-card">
+                    <div class="order-status-header">
+                        <div>
+                            <h2>Order #ORD-2024-001</h2>
+                            <p>Placed on March 15, 2024</p>
+                        </div>
+                        <span class="status-badge delivered">Delivered</span>
+                    </div>
+
+                    <div class="order-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Order Placed</h4>
+                                <p>March 15, 2024 9:30 AM</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Processing</h4>
+                                <p>March 15, 2024 2:45 PM</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Shipped</h4>
+                                <p>March 16, 2024 10:15 AM</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Delivered</h4>
+                                <p>March 18, 2024 2:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-details-grid">
+                    <div class="order-items-card">
+                        <h3>Order Items</h3>
+                        <div class="order-item">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones">
+                            <div class="item-details">
+                                <h4>Premium Wireless Headphones</h4>
+                                <p class="item-meta">Color: Black | Quantity: 1</p>
+                                <p class="item-price">$199.99</p>
+                            </div>
+                        </div>
+                        <div class="order-item">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+                            <div class="item-details">
+                                <h4>Smart Watch Pro</h4>
+                                <p class="item-meta">Color: Silver | Quantity: 1</p>
+                                <p class="item-price">$99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shipping-info-card">
+                        <h3>Shipping Information</h3>
+                        <div class="info-group">
+                            <h4>Shipping Address</h4>
+                            <p>John Doe</p>
+                            <p>123 Main St</p>
+                            <p>New York, NY 10001</p>
+                            <p>United States</p>
+                        </div>
+                        <div class="info-group">
+                            <h4>Contact Information</h4>
+                            <p>Email: john.doe@example.com</p>
+                            <p>Phone: 123-456-7890</p>
+                        </div>
+                        <div class="info-group">
+                            <h4>Shipping Method</h4>
+                            <p>Standard Shipping (3-5 business days)</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-info-card">
+                        <h3>Payment Information</h3>
+                        <div class="info-group">
+                            <h4>Payment Method</h4>
+                            <p><i class="fab fa-cc-visa"></i> Visa ending in 1111</p>
+                        </div>
+                        <div class="info-group">
+                            <h4>Billing Address</h4>
+                            <p>Same as shipping address</p>
+                        </div>
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>$299.98</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span>$30.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span>$329.98</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-actions">
+                    <button class="btn btn-secondary">Download Invoice</button>
+                    <button class="btn btn-primary">Track Package</button>
+                    <button class="btn btn-secondary">Need Help?</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted online store for quality products at affordable prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

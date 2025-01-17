@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Your Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Your Store</a>
+            <nav>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="product-details">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Premium Headphones" id="main-product-image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones View 1" class="thumbnail active" onclick="updateMainImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1505740106531-4243f3831c78" alt="Headphones View 2" class="thumbnail" onclick="updateMainImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1505740106531-4243f3831c79" alt="Headphones View 3" class="thumbnail" onclick="updateMainImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1505740106531-4243f3831c80" alt="Headphones View 4" class="thumbnail" onclick="updateMainImage(this.src)">
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <nav class="product-breadcrumb">
+                        <a href="index.html">Home</a> /
+                        <a href="products.html">Products</a> /
+                        <span>Premium Headphones</span>
+                    </nav>
+                    
+                    <h1>Premium Wireless Headphones</h1>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(128 reviews)</span>
+                        </div>
+                        <p class="product-sku">SKU: HD-2024-001</p>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$199.99</span>
+                        <span class="original-price">$249.99</span>
+                        <span class="discount-badge">20% OFF</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>Experience premium sound quality with our wireless headphones. Features include:</p>
+                        <ul>
+                            <li>Active Noise Cancellation</li>
+                            <li>40-hour Battery Life</li>
+                            <li>Bluetooth 5.0 Connectivity</li>
+                            <li>Premium Memory Foam Cushions</li>
+                            <li>Built-in Voice Assistant</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div class="color-options">
+                                <button class="color-option active" style="background-color: #000000;" data-color="Black"></button>
+                                <button class="color-option" style="background-color: #FFFFFF;" data-color="White"></button>
+                                <button class="color-option" style="background-color: #C0C0C0;" data-color="Silver"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>Quantity:</label>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="updateQuantity(-1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity" value="1" min="1" max="99">
+                                <button class="quantity-btn" onclick="updateQuantity(1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-lg" onclick="addToCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-secondary btn-lg">
+                            <i class="far fa-heart"></i>
+                            Add to Wishlist
+                        </button>
+                    </div>
+                    
+                    <div class="product-additional">
+                        <div class="shipping-info">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $50</span>
+                        </div>
+                        <div class="stock-info in-stock">
+                            <i class="fas fa-check-circle"></i>
+                            <span>In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('description')">Description</button>
+                    <button class="tab-btn" onclick="switchTab('specifications')">Specifications</button>
+                    <button class="tab-btn" onclick="switchTab('reviews')">Reviews</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="description" class="tab-pane active">
+                        <h2>Product Description</h2>
+                        <p>Immerse yourself in exceptional audio quality with our Premium Wireless Headphones. Designed for music enthusiasts and professionals alike, these headphones deliver crystal-clear sound and outstanding comfort for extended listening sessions.</p>
+                        <p>The active noise cancellation technology creates a peaceful listening environment by blocking out unwanted ambient noise, while the premium memory foam cushions provide lasting comfort.</p>
+                        <p>With Bluetooth 5.0 connectivity, you can enjoy seamless wireless audio streaming from your devices. The built-in voice assistant makes it easy to control your music, make calls, and access information hands-free.</p>
+                    </div>
+                    
+                    <div id="specifications" class="tab-pane">
+                        <h2>Technical Specifications</h2>
+                        <table class="specs-table">
+                            <tr>
+                                <td>Driver Size</td>
+                                <td>40mm</td>
+                            </tr>
+                            <tr>
+                                <td>Frequency Response</td>
+                                <td>20Hz - 20kHz</td>
+                            </tr>
+                            <tr>
+                                <td>Battery Life</td>
+                                <td>Up to 40 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Charging Time</td>
+                                <td>2.5 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Bluetooth Version</td>
+                                <td>5.0</td>
+                            </tr>
+                            <tr>
+                                <td>Range</td>
+                                <td>10m (33ft)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id="reviews" class="tab-pane">
+                        <h2>Customer Reviews</h2>
+                        <div class="review-summary">
+                            <div class="average-rating">
+                                <h3>4.5</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 128 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5 stars</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 70%"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 stars</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 20%"></div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 stars</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 7%"></div>
+                                    </div>
+                                    <span>7%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 stars</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 2%"></div>
+                                    </div>
+                                    <span>2%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 1%"></div>
+                                    </div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted online store for quality products at affordable prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates and special offers!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Store. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateMainImage(src) {
+            document.getElementById('main-product-image').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        function updateQuantity(change) {
+            const input = document.getElementById('quantity');
+            const newValue = Math.max(1, Math.min(99, parseInt(input.value) + change));
+            input.value = newValue;
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase() === tabId) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+                if (pane.id === tabId) {
+                    pane.classList.add('active');
+                }
+            });
+        }
+
+        function addToCart() {
+            const product = {
+                id: 'HD-2024-001',
+                name: 'Premium Wireless Headphones',
+                price: 199.99,
+                quantity: parseInt(document.getElementById('quantity').value),
+                color: document.querySelector('.color-option.active').dataset.color,
+                image: document.getElementById('main-product-image').src
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === product.id && item.color === product.color);
+
+            if (existingItem) {
+                existingItem.quantity += product.quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            showAddToCartSuccess();
+        }
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelector('.cart-badge').textContent = totalItems;
+        }
+
+        function showAddToCartSuccess() {
+            const button = document.querySelector('.btn-primary');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            button.disabled = true;
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+
+            // Color option selection
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

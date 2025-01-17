@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - E-Shop</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">E-Shop</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="signin.html">Sign Out</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-header">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&size=120" alt="Profile Picture" class="profile-avatar">
+                    <div class="profile-info">
+                        <h1 class="profile-name">John Doe</h1>
+                        <p class="profile-email">john.doe@example.com</p>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-camera"></i>
+                            Change Photo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-card" id="personal-info">
+                        <div class="profile-card-header">
+                            <h2 class="profile-card-title">Personal Information</h2>
+                            <button class="edit-btn" onclick="toggleEdit('personal-info')">
+                                <i class="fas fa-pencil-alt"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <span class="detail-label">Full Name</span>
+                                <span class="detail-value">John Doe</span>
+                                <input type="text" class="form-control" value="John Doe" style="display: none;">
+                                <div class="edit-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="saveChanges('personal-info')">Save</button>
+                                    <button class="btn btn-outline btn-sm" onclick="cancelEdit('personal-info')">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">Email</span>
+                                <span class="detail-value">john.doe@example.com</span>
+                                <input type="email" class="form-control" value="john.doe@example.com" style="display: none;">
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">Phone</span>
+                                <span class="detail-value">+1 234 567 890</span>
+                                <input type="tel" class="form-control" value="+1 234 567 890" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card" id="shipping-address">
+                        <div class="profile-card-header">
+                            <h2 class="profile-card-title">Shipping Address</h2>
+                            <button class="edit-btn" onclick="toggleEdit('shipping-address')">
+                                <i class="fas fa-pencil-alt"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <span class="detail-label">Street Address</span>
+                                <span class="detail-value">123 Main Street</span>
+                                <input type="text" class="form-control" value="123 Main Street" style="display: none;">
+                                <div class="edit-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="saveChanges('shipping-address')">Save</button>
+                                    <button class="btn btn-outline btn-sm" onclick="cancelEdit('shipping-address')">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">City</span>
+                                <span class="detail-value">New York</span>
+                                <input type="text" class="form-control" value="New York" style="display: none;">
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">State</span>
+                                <span class="detail-value">NY</span>
+                                <input type="text" class="form-control" value="NY" style="display: none;">
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">ZIP Code</span>
+                                <span class="detail-value">10001</span>
+                                <input type="text" class="form-control" value="10001" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card" id="password-change">
+                        <div class="profile-card-header">
+                            <h2 class="profile-card-title">Change Password</h2>
+                            <button class="edit-btn" onclick="toggleEdit('password-change')">
+                                <i class="fas fa-key"></i>
+                                Change
+                            </button>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <span class="detail-label">Current Password</span>
+                                <span class="detail-value">••••••••</span>
+                                <input type="password" class="form-control" placeholder="Enter current password" style="display: none;">
+                                <div class="edit-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="saveChanges('password-change')">Save</button>
+                                    <button class="btn btn-outline btn-sm" onclick="cancelEdit('password-change')">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">New Password</span>
+                                <span class="detail-value">••••••••</span>
+                                <input type="password" class="form-control" placeholder="Enter new password" style="display: none;">
+                            </div>
+                            <div class="detail-group">
+                                <span class="detail-label">Confirm Password</span>
+                                <span class="detail-value">••••••••</span>
+                                <input type="password" class="form-control" placeholder="Confirm new password" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleEdit(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('edit-mode');
+            
+            const detailValues = section.querySelectorAll('.detail-value');
+            const inputs = section.querySelectorAll('.form-control');
+            
+            detailValues.forEach((value, index) => {
+                value.style.display = value.style.display === 'none' ? 'block' : 'none';
+                inputs[index].style.display = inputs[index].style.display === 'none' ? 'block' : 'none';
+            });
+        }
+
+        function saveChanges(sectionId) {
+            const section = document.getElementById(sectionId);
+            const inputs = section.querySelectorAll('.form-control');
+            const detailValues = section.querySelectorAll('.detail-value');
+            
+            inputs.forEach((input, index) => {
+                detailValues[index].textContent = input.value;
+            });
+            
+            toggleEdit(sectionId);
+            alert('Changes saved successfully!');
+        }
+
+        function cancelEdit(sectionId) {
+            toggleEdit(sectionId);
+        }
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

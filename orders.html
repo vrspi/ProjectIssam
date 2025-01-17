@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Your Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Your Store</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="orders-header">
+                <h1>My Orders</h1>
+                <p>View and track your orders</p>
+            </div>
+
+            <div class="orders-list">
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <h3>Order #ORD-2024-001</h3>
+                            <span class="order-date">March 15, 2024</span>
+                        </div>
+                        <div class="order-status">
+                            <span class="status-badge delivered">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+                    </div>
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <span class="price">$299.98</span>
+                        </div>
+                        <a href="order-details.html?id=ORD-2024-001" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <h3>Order #ORD-2024-002</h3>
+                            <span class="order-date">March 10, 2024</span>
+                        </div>
+                        <div class="order-status">
+                            <span class="status-badge shipped">Shipped</span>
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12" alt="Smart Watch">
+                    </div>
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <span class="price">$199.99</span>
+                        </div>
+                        <a href="order-details.html?id=ORD-2024-002" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <h3>Order #ORD-2024-003</h3>
+                            <span class="order-date">March 5, 2024</span>
+                        </div>
+                        <div class="order-status">
+                            <span class="status-badge processing">Processing</span>
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="Shoes">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+                        <span class="more-items">+2 more</span>
+                    </div>
+                    <div class="order-footer">
+                        <div class="order-total">
+                            <span>Total:</span>
+                            <span class="price">$599.95</span>
+                        </div>
+                        <a href="order-details.html?id=ORD-2024-003" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted online store for quality products at affordable prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

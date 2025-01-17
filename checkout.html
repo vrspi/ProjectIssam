@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Your Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Your Store</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Shipping</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Payment</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Review</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <section class="shipping-info">
+                        <h2>Shipping Information</h2>
+                        <form id="shipping-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                </select>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="payment-info">
+                        <h2>Payment Information</h2>
+                        <form id="payment-form">
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <div class="card-input">
+                                    <input type="text" id="card-number" required placeholder="1234 5678 9012 3456">
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" required placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" required placeholder="123">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="save-card">
+                                    <span>Save card for future purchases</span>
+                                </label>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="summary-subtotal">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="shipping">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span class="tax">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-total">
+                        <div class="summary-row">
+                            <span>Total</span>
+                            <span class="total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="placeOrder()">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Secure Checkout</h3>
+                    <p>Your payment information is encrypted and secure.</p>
+                    <div class="security-badges">
+                        <i class="fas fa-lock"></i>
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Need Help?</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const summaryItems = document.querySelector('.summary-items');
+            let subtotal = 0;
+
+            summaryItems.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                return `
+                    <div class="summary-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>Color: ${item.color}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                        </div>
+                        <div class="item-price">$${itemTotal.toFixed(2)}</div>
+                    </div>
+                `;
+            }).join('');
+
+            const shipping = subtotal >= 50 ? 0 : 9.99;
+            const tax = subtotal * 0.1;
+            const total = subtotal + shipping + tax;
+
+            document.querySelector('.subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.querySelector('.shipping').textContent = `$${shipping.toFixed(2)}`;
+            document.querySelector('.tax').textContent = `$${tax.toFixed(2)}`;
+            document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function placeOrder() {
+            // Simulate order processing
+            const btn = document.querySelector('.btn-primary');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+            setTimeout(() => {
+                localStorage.removeItem('cart');
+                window.location.href = 'thank-you.html';
+            }, 2000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+            updateCartBadge();
+
+            // Pre-fill form with static data
+            document.getElementById('first-name').value = 'John';
+            document.getElementById('last-name').value = 'Doe';
+            document.getElementById('email').value = 'john.doe@example.com';
+            document.getElementById('phone').value = '123-456-7890';
+            document.getElementById('address').value = '123 Main St';
+            document.getElementById('city').value = 'New York';
+            document.getElementById('state').value = 'NY';
+            document.getElementById('zip').value = '10001';
+            document.getElementById('country').value = 'US';
+            
+            document.getElementById('card-name').value = 'John Doe';
+            document.getElementById('card-number').value = '4111 1111 1111 1111';
+            document.getElementById('expiry').value = '12/25';
+            document.getElementById('cvv').value = '123';
+        });
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelector('.cart-badge').textContent = totalItems;
+        }
+    </script>
+
+    <style>
+    .error-messages {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .error-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 90%;
+    }
+
+    .error-content h3 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .error-content ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .error-content li {
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+    }
+
+    .error-content button {
+        width: 100%;
+        padding: 0.75rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input.error {
+        border-color: var(--accent-color);
+    }
+
+    input.error:focus {
+        box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+    }
+    </style>
+</body>
+</html> 
